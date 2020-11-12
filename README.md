@@ -17,7 +17,7 @@ Here we use 5 different filter banks to get image's filter response, which are S
 * [openCV 3.4.1](https://opencv.org/opencv-3-4-1/)
 
 ## Results
-![Image text](./results_imgs_folder/results.jpg)
+![Image text](https://github.com/LeoHaoVIP/Texture_Classification_Based_on_Filter_Bank/blob/master/results_imgs_folder/results.jpg?raw=true)
 
 ## References
 * [1] Leung, T., Malik, J. Representing and Recognizing the Visual Appearance of Materials using Three-dimensional Textons. International Journal of Computer Vision 43, 29¨C44 (2001). https://doi.org/10.1023/A:1011126920638
