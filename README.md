@@ -6,17 +6,19 @@ Here we use 5 different filter banks to get image's filter response, which are S
 
 ## Project Structure
 
-+ Runnable Python source file is [TextureClassification.py](./TextureClassification.py), which includes dictionary training, texture model construction and novel image prediction, just clone the repository and run it!
-+ Texture images dataset is in [KTH_TIPS_GRAY](./KTH_TIPS_GRAY) directory, which contains 10 texture classes for model training and testing.
-+ Filter banks generating scripts are not implemented in Python, you can get MATLAB code for filter banks in [external_matlab_scripts](./external_matlab_scripts).
-+ Here we just load the output of MATLAB scripts to get each image's filter response, the mat file is in [filter_banks](./filter_banks) directory.
-+ [Dataset](./dataset) and [dictionary](./dictionary) directories are the output of the runnable Python script, [dataset](./dataset) is the histogram set of training images while [dictionary](./dictionary) is learned from the dataset with Kmeans.
++ Runnable Python source file is [TextureClassification.py](./TextureClassification.py), which includes dictionary training, texture model construction and novel image prediction.
+JUST CLONE THE REPOSITORY AND RUN IT!
++ Texture image dataset is in [KTH_TIPS_GRAY](./KTH_TIPS_GRAY) directory, which contains 10 texture classes for dictionary learning, model training and testing.
++ Scripts for generating filter banks are not implemented in Python, you can get MATLAB code for filter banks in [external_matlab_scripts](./external_matlab_scripts). These MATLAB scripts are from [Here](http://www.robots.ox.ac.uk/~vgg/research/texclass/filters.html).
++ Here we just load the output(mat data file) of MATLAB scripts and convolve it with image to get each image's filter response, the mat file is in [filter_banks](./filter_banks) directory.
++ [Dataset](./dataset) and [dictionary](./dictionary) directories are outputs of the runnable Python script, [dataset](./dataset) is the histogram set of training images while [dictionary](./dictionary) is learned from the dataset using Kmeans algorithm.
++ P.S. Clear the two directory ([Dataset](./dataset) and [dictionary](./dictionary)) to rebuild texton dictionary and retrain the classifier.
 
 ## Sketch Map of Texton Dictionary
-<img src="./doc_imgs_folder/texton_dictionary.png" alt="img_texton_dictionary" style="zoom:30%;" />
+![img_texton_dictionary](./doc_imgs_folder/texton_dictionary.png)
 
 ## Sketch Map of Histogram Matching
-<img src="./doc_imgs_folder/knn_histogram_match.png" alt="img_histogram_match" style="zoom:30%;" />
+![img_histogram_match](./doc_imgs_folder/knn_histogram_match.png)
 
 ## Process of Texture Classification
 + Texton Dictionary Learning
