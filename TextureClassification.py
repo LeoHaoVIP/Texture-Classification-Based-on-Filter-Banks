@@ -18,27 +18,17 @@ SINGLE_CLASS_SAMPLES_NUM = 81
 CLASS_NUM = 10
 # self-adjust
 FILTER_BANK_SIZE = 13
-# adjustable
+# Adjustable
 LEARNING_SAMPLES_NUM = 13
-# adjustable
+# Adjustable
 CLUSTER_SIZE = 10
-# adjustable
+# Adjustable
 BINS_NUM = CLUSTER_SIZE * CLASS_NUM
+# Adjustable 这里可用的滤波池类型有：['S', 'LMS', 'LML', 'RFS', 'MR8']
+FILTER_BANK_TYPE = 'MR8'
 classes_info = []
 filter_bank = []
 dictionary = []
-# 这里可用的滤波池类型有：['S', 'LMS', 'LML', 'RFS', 'MR8']
-# adjustable
-FILTER_BANK_TYPE = 'MR8'
-
-'''
-Results:                                    AVE
-LML: 96.80% 97.20% 97.20% 96.40% 94.80% /   96.48%
-LMS: 97.60% 94.80% 96.80% 97.20% 98.80% /   97.04%
-MR8: 94.80% 95.60% 97.60% 97.20% 94.80% /   96.00%
-RFS: 97.20% 96.80% 95.20% 95.60% 97.60% /   96.48%
- S : 93.60% 93.20% 94.00% 92.40% 95.20% /   93.68%
-'''
 
 
 # 存储类别信息（类别序号、类别名称、包含图片的路径）
@@ -181,18 +171,6 @@ def img2histogram(image):
     [histogram, _] = np.histogram(texton_map, BINS_NUM)
     # 根据论文，对于图片大小不统一的数据集，需要对histogram归一化
     histogram = histogram / np.sum(histogram)
-    # end = time.time()
-    # print('time cost ', end - start)
-    # -------show histogram---------
-    # plt.subplot(121)
-    # plt.imshow(image, 'gray')
-    # plt.title('Texture Image')
-    # plt.subplot(122)
-    plt.hist(texton_map, BINS_NUM)
-    plt.title('Histogram')
-    plt.xlabel('Texton Label Index')
-    plt.ylabel('Frequency')
-    plt.show()
     return histogram
 
 
@@ -347,13 +325,3 @@ if __name__ == '__main__':
     accuracy = test_model_knn(model, test_data, test_label)
     # accuracy = test_model_svm(model, test_data, test_label)
     print('The accuracy is %.2f%%' % (accuracy * 100))
-
-    # --------plot filter bank------
-    # subplot_index = 1
-    # plt.figure(figsize=(100, 50))
-    # for _filter in filter_bank:
-    #     plt.subplot(7, 6, subplot_index)
-    #     plt.imshow(_filter, 'gray')
-    #     plt.axis('off')
-    #     subplot_index += 1
-    # plt.show()
