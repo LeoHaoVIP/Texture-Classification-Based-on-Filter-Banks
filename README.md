@@ -24,3 +24,6 @@ Here we use 5 different filter banks to get image's filter response, which are S
 * [2] Varma, M., Zisserman, A. A Statistical Approach to Texture Classification from Single Images. Int J Comput Vision 62, 61¨C81 (2005). https://doi.org/10.1007/s11263-005-4635-4
 * [3] M. Varma and A. Zisserman, "Texture classification: are filter banks necessary?," 2003 IEEE Computer Society Conference on Computer Vision and Pattern Recognition, 2003. Proceedings., Madison, WI, USA, 2003, pp. II-691, doi: 10.1109/CVPR.2003.1211534.
 * [4] M. Fritz, E. Hayman, B. Caputo, and J.-O. Eklundh. The KTH-TIPS database. Available at www.nada.kth.se/cvap/databases/kth-tips.
+
+## Author Info
+LeoHao (XMU-CS)
