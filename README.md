@@ -30,7 +30,7 @@ JUST CLONE THE REPOSITORY AND RUN IT!
 
 ## Dependency
 
-* [openCV 3.4.1](https://opencv.org/opencv-3-4-1/)
+* [OpenCV 3.4.1](https://opencv.org/opencv-3-4-1/)
 
 ## References
 * [1] Leung, T., Malik, J. Representing and Recognizing the Visual Appearance of Materials using Three-dimensional Textons. International Journal of Computer Vision 43, 29¨C44 (2001). https://doi.org/10.1023/A:1011126920638
