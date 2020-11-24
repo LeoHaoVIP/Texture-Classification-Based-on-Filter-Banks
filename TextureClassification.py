@@ -168,7 +168,7 @@ def img2histogram(image):
     # dictionary中的texton在各个像素点上的映射
     texton_map = np.argmin(distances, 1)
     # 构造直方图，大小为BINS_NUM
-    [histogram, _] = np.histogram(texton_map, BINS_NUM)
+    [histogram, _] = np.histogram(texton_map, BINS_NUM, range=(0, BINS_NUM - 1))
     # 根据论文，对于图片大小不统一的数据集，需要对histogram归一化
     histogram = histogram / np.sum(histogram)
     return histogram
