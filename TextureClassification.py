@@ -16,14 +16,14 @@ np.set_printoptions(threshold=np.inf)
 # 单个类别下的样本数目
 SINGLE_CLASS_SAMPLES_NUM = 81
 CLASS_NUM = 10
-# self-adjust
-FILTER_BANK_SIZE = 13
+# self-adjustable
+FILTER_BANK_SIZE = 0
 # Adjustable
 LEARNING_SAMPLES_NUM = 13
 # Adjustable
 CLUSTER_SIZE = 10
-# Adjustable
-BINS_NUM = CLUSTER_SIZE * CLASS_NUM
+# Self-Adjustable
+BINS_NUM = 0
 # Adjustable 这里可用的滤波池类型有：['S', 'LMS', 'LML', 'RFS', 'MR8']
 FILTER_BANK_TYPE = 'MR8'
 classes_info = []
@@ -304,6 +304,8 @@ if __name__ == '__main__':
         logger('Creating texton dictionary...')
         dictionary = build_texton_dictionary()
         np.savetxt(dictionary_path, dictionary)
+    # 更新BINS_NUM
+    BINS_NUM = len(dictionary)
     # 训练集、测试集路径
     dataset_path = './dataset/' + FILTER_BANK_TYPE
     if os.path.exists(dataset_path + '/train_data'):
